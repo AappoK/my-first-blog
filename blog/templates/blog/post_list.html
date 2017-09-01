@@ -7,16 +7,13 @@
             <h1><a href="">Aappon blogi</a></h1>
         </div>
 
+    {% for post in posts %}
         <div>
-            <p>published: 27.08.2017, 16:39</p>
-            <h2><a href="">Eka postaus</a></h2>
-            <p>Tässä on tekstiä</p>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 27.08.2017, 16:39</p>
-            <h2><a href="">Toka postaus</a></h2>
-            <p>Lisää tekstiä</p>
-        </div>
+    {% endfor %}
+        
     </body>
 </html>
